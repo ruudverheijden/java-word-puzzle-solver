@@ -7,12 +7,12 @@ public class WordsList {
     private ArrayList<String> result = new ArrayList<String>();
 
     WordsList() {
-        String dictionaryPathName = "./dictionaries/OpenTaal-210G-basis-gekeurd.txt";
+        String dictionaryPathName = "/OpenTaal-210G-basis-gekeurd.txt";
         ArrayList<String> fullList = new ArrayList<String>();
 
         // Add all words to an arraylist
         try {
-            Scanner scanner = new Scanner(new File(dictionaryPathName));
+            Scanner scanner = new Scanner(this.getClass().getResourceAsStream(dictionaryPathName));
 
             while (scanner.hasNextLine()) {
                 String nextLine = scanner.nextLine();
@@ -24,7 +24,7 @@ public class WordsList {
             // Start with the full list of words
             this.result = fullList;
 
-        } catch (FileNotFoundException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }

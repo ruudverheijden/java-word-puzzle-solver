@@ -19,7 +19,7 @@ public class Main {
 //                .GetResult();
 
         ArrayList<String> list = wordlist
-                .ContainsAtLeast(new String[]{"a", "r", "p", "z", "t"}, 3)
+                .ContainsAtLeast(new String[]{"a", "r", "p", "z", "t"}, 4)
                 .GetResult();
 
         for (String item : list) {
